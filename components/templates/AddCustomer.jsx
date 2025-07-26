@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Form from "../modules/Form";
+import { useRouter } from "next/router";
 
 function AddCustomer() {
   const [form, setForm] = useState({
@@ -12,9 +13,33 @@ function AddCustomer() {
     products: [],
   });
 
-  const handleCancel = () => {};
+  const router = useRouter();
 
-  const handleSave = () => {};
+  const handleCancel = () => {
+    setForm({
+      name: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      postalCode: "",
+      date: "",
+      products: [],
+    });
+
+    router.push("/");
+  };
+
+  const handleSave = async () => {
+    const res = await fetch("/api/customer", {
+      method: "POST",
+      body: JSON.stringify({ data: form }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const data = await res.json();
+    console.log(data);
+    if (data.status === "success") router.push("/");
+  };
 
   return (
     <div>
