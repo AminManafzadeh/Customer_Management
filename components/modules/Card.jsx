@@ -37,7 +37,7 @@ function Card({ item }) {
         </Link>
         <Link
           className="border border-greenn text-greenn bg-blackk rounded-[5px] p-[5px]  font-extralight"
-          href={`/cutomer/${item._id}`}
+          href={`/customer/${item._id}`}
         >
           Details
         </Link>
