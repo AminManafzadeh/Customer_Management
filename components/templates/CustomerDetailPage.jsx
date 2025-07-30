@@ -49,9 +49,9 @@ function CustomerDetailPage({ data }) {
         </div>
       </div>
       <div className="bg-blackk mt-[50px] p-4 rounded-[5px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-4">
-        <p className="text-bluee mb-6">Name</p>
-        <p className="text-bluee mb-6">Price</p>
-        <p className="text-bluee mb-6">Qty</p>
+        <p className="text-white mb-6">Name</p>
+        <p className="text-white mb-6">Price</p>
+        <p className="text-white mb-6">Qty</p>
         {data?.products.map((product, index) => (
           <React.Fragment key={index}>
             <p className="text-bluee mb-6">{product?.name}</p>
